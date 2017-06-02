@@ -21,8 +21,9 @@ Note: `cluster_name` is just a unique name for this group of
 infrastructure.  You can call it whatever.
 
 ```
-    $ terraform plan -out /tmp/plan.out
-    $ terraform apply /tmp/plan.out
+    $ export TMPDIR=$(mktemp -d)
+    $ terraform plan -out ${TMPDIR}/plan.out
+    $ terraform apply ${TMPDIR}/plan.out
 ```
 
 * configure your VPN instance
